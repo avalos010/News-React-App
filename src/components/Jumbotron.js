@@ -1,6 +1,6 @@
 import React from 'react';
 import {MyContext} from './ContextProvider';
-import {Link} from 'react-router-dom';
+
 
 const Jumbotron = () => (
   <div className="jumbotron text-center mt-2 ">
@@ -15,7 +15,7 @@ const Jumbotron = () => (
     </figure>
     <small>{context.JumboNews[0].publishedAt}</small>
     <br/>
-    <Link to={`/post/${context.JumboNews[0].publishedAt}`} onClick={() => context.postClicked(context.JumboNews[0])} className="btn  btn-primary">Read</Link>
+    <a target="_blank" href={context.JumboNews[0].url} className="btn text-light btn-primary">Read</a>
     </div>
   }}
 </MyContext.Consumer>

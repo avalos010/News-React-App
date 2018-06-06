@@ -22,7 +22,7 @@ class Apple extends Component {
           </figcaption>
           </figure>
           <small> {news.publishedAt}</small>
-          <a href={news.url} className="btn btn-block btn-dark">Read</a>
+          <a  target="_blank" href={news.url} className="btn btn-block btn-dark">Read</a>
           </div>
           </div>
         ))}
