@@ -16,7 +16,6 @@ export class MyProvider extends Component {
     //Fetch Latest
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f220456e25214eb3804eaa77e7ecca42`;
     fetch(url)
-      .then(res => res)
       .then(res => res.json())
       .then(json => this.setState({
         Topnews: json.articles
@@ -26,16 +25,14 @@ export class MyProvider extends Component {
       }))
     //Fetch Apple News
 
-    fetch(`https://newsapi.org/v2/everything?q=Apple&from=2018-06-05&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
-      .then(res => res)
+    fetch(`https://newsapi.org/v2/everything?q=Apple&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
       .then(res => res.json())
       .then(json => this.setState({
         AppleNews: json.articles
       }))
 
     //Fetch MicrosoftNews
-    fetch(`https://newsapi.org/v2/everything?q=Microsoft&from=2018-06-05&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
-      .then(res => res)
+    fetch(`https://newsapi.org/v2/everything?q=Microsoft&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
       .then(res => res.json())
       .then(json => this.setState({
         MicrosoftNews: json.articles
