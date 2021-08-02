@@ -14,7 +14,7 @@ export class MyProvider extends Component {
   componentWillMount = () => {
 
     //Fetch Latest
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f220456e25214eb3804eaa77e7ecca42`;
+    const url = `https://newsapi.org/v2/everything?q=latest&apiKey=${process.env.REACT_APP_API_KEY}`;
     fetch(url)
       .then(res => res.json())
       .then(json => this.setState({
@@ -25,14 +25,14 @@ export class MyProvider extends Component {
       }))
     //Fetch Apple News
 
-    fetch(`https://newsapi.org/v2/everything?q=Apple&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
+    fetch(`https://newsapi.org/v2/everything?q=apple&apiKey=${process.env.REACT_APP_API_KEY}`)
       .then(res => res.json())
       .then(json => this.setState({
         AppleNews: json.articles
       }))
 
     //Fetch MicrosoftNews
-    fetch(`https://newsapi.org/v2/everything?q=Microsoft&sortBy=popularity&apiKey=f220456e25214eb3804eaa77e7ecca42`)
+    fetch(`https://newsapi.org/v2/everything?q=microsoft&apiKey=${process.env.REACT_APP_API_KEY}`)
       .then(res => res.json())
       .then(json => this.setState({
         MicrosoftNews: json.articles

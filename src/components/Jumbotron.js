@@ -8,12 +8,13 @@ const Jumbotron = () => (
   <MyContext.Consumer>
   {context => {
   return context.JumboNews !== null &&
-  <div>
+  <div className="mt-3">
     <h3>{context.JumboNews[0].title}</h3>
     <figure>
     <img className="img-fluid" width="50%" src={context.JumboNews[0].urlToImage} alt="topnewsimg" />
     </figure>
-    <small>{context.JumboNews[0].publishedAt}</small>
+    <small>{new Date(context.JumboNews[0].publishedAt).toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).
+  replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2')}</small>
     <br/>
     <a target="_blank" href={context.JumboNews[0].url} className="btn text-light btn-primary">Read</a>
     </div>

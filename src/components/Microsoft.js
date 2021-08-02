@@ -22,7 +22,8 @@ class Microsoft extends Component {
           <p className="card-text"> {news.description} </p>
           </figcaption>
           </figure>
-          <small> {news.publishedAt}</small>
+          <small> {new Date(news.publishedAt).toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).
+  replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2')}</small>
           <a target="_blank" href={news.url} className="btn btn-block btn-dark">Read</a>
           </div>
           </div>
