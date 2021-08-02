@@ -45,8 +45,8 @@ export class MyProvider extends Component {
 
 
   render() {
-    return ( <
-      MyContext.Provider value = {
+    return ( 
+      <MyContext.Provider value = {
         {
           state: this.state,
           Topnews: this.state.Topnews,
@@ -57,8 +57,7 @@ export class MyProvider extends Component {
         }
       } > {
         this.props.children
-      } <
-      /MyContext.Provider>
+      } </MyContext.Provider>
     )
   }
 
